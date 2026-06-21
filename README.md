@@ -6,6 +6,20 @@ acessível e sem backend.
 
 ---
 
+## 🌐 Site no ar
+
+👉 **https://fantinelasss.github.io/sementes-de-fe/**
+
+O deploy é **automático**: todo `git push` na branch `main` dispara o GitHub
+Actions ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)), que
+faz o build e publica no GitHub Pages em ~2 minutos. Ou seja: editou, deu push,
+o site atualiza sozinho.
+
+> As rotas usam `#` (ex.: `.../sementes-de-fe/#/produto/familia`) — é o formato
+> mais confiável para SPA no GitHub Pages. O link principal (home) é limpo.
+
+---
+
 ## ▶️ Como rodar localmente
 
 Pré-requisitos: **Node.js 18+** instalado.
