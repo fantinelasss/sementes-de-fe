@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — Sementes de Fé
+   Edite as cores e fontes aqui; elas viram utilitários do Tailwind
+   (ex.: --color-sage  ->  bg-sage / text-sage / border-sage).
+   ============================================================ */
+@theme {
+  /* Paleta da marca */
+  --color-cream: #FBF8F3;       /* fundo creme */
+  --color-surface: #FFFFFF;     /* cartões / superfícies */
+  --color-sage: #7BA488;        /* verde sálvia (primária) */
+  --color-sage-dark: #5C8161;   /* verde escuro (títulos / texto) */
+  --color-gold: #C7A878;        /* dourado / areia (preços, destaques) */
+  --color-gold-dark: #A8884F;   /* dourado escuro (texto sobre creme) */
+  --color-blush: #D99BB0;       /* rosa suave (acento) */
+  --color-sky: #8AAABE;         /* azul sereno (acento secundário) */
+  --color-ink: #4A4540;         /* texto principal */
+  --color-muted: #7A736C;       /* texto suave */
+
+  /* Tipografia */
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+
+  /* Sombras suaves e quentes (em vez de cinza puro) */
+  --shadow-soft: 0 10px 30px -14px rgba(92, 129, 97, 0.25);
+  --shadow-card: 0 14px 40px -18px rgba(74, 69, 64, 0.22);
+  --shadow-card-hover: 0 26px 60px -24px rgba(92, 129, 97, 0.40);
+  --shadow-glow-gold: 0 18px 50px -20px rgba(199, 168, 120, 0.55);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 92px; /* compensa o header fixo ao usar âncoras */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem; /* >= 16px no mobile */
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    color: var(--color-sage-dark);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  /* Foco visível e consistente para navegação por teclado */
+  :focus-visible {
+    outline: 3px solid var(--color-sage);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Seleção de texto na cor da marca */
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-gold) 45%, white);
+    color: var(--color-ink);
+  }
+}
+
+/* ============================================================
+   UTILITÁRIOS / ANIMAÇÕES (microinterações sutis)
+   ============================================================ */
+
+/* Revelação ao rolar — controlada pelo componente <Reveal/>.
+   Easing tipo "ease-out-expo" para uma entrada macia e elegante. */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+/* Variantes de entrada */
+.reveal-scale { transform: translateY(14px) scale(0.94); }
+.reveal-left { transform: translateX(-32px); }
+.reveal-right { transform: translateX(32px); }
+.reveal-fade { transform: none; }
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Parallax suave (capas do hero) — segue o ponteiro no desktop */
+.parallax {
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Flutuar suavemente (capas no hero) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: float 8.5s ease-in-out infinite; }
+
+/* Brilho lento de fundo (blobs decorativos) */
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(14px, -18px) scale(1.06); }
+}
+.animate-drift { animation: drift 16s ease-in-out infinite; }
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-float,
+  .animate-float-slow,
+  .animate-drift {
+    animation: none !important;
+  }
+  .parallax {
+    transform: none !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

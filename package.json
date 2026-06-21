@@ -1,0 +1,23 @@
+{
+  "name": "sementes-de-fe",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Landing page de vendas para devocionais cristãos digitais — Sementes de Fé",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/spa-fallback.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.7",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.1.7",
+    "vite": "^5.4.11"
+  }
+}

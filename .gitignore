@@ -1,0 +1,39 @@
+# dependências
+node_modules
+.pnp
+.pnp.js
+
+# build
+dist
+dist-ssr
+*.local
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# editores / SO
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+
+# IMPORTANTE: não publicar os PDFs vendidos (produtos pagos!)
+# O site usa apenas as capas em imagem (public/capas/), não os PDFs.
+*.pdf
+
+# Mídia avulsa na raiz (artes/imagens soltas que NÃO fazem parte do site).
+# As imagens usadas pelo site ficam em public/ e continuam versionadas.
+/*.jpg
+/*.jpeg
+/*.png
+/*.webp
+/*.svg
+
+# config local (Claude Code, skills, launch.json)
+.claude/
