@@ -101,7 +101,7 @@ export const combo = {
     'Tudo o que você precisa para criar uma rotina diária de oração e gratidão, do adulto ao pequeno, com acesso imediato a todos os PDFs.',
   ],
   price: 'R$ 19,90',
-  oldPrice: 'R$ 59,70',
+  oldPrice: 'R$ 30',
   accent: 'gold',
   badge: 'Mais vantajoso',
   includes: ['Momentos com Deus', 'Momento com Deus em Família', 'Devocional Fofinho'],
