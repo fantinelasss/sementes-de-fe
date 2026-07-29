@@ -31,7 +31,7 @@ export const products = [
       'Um convite para desacelerar e reservar, todos os dias, um momento só seu com Deus. Ao longo de 15 dias você recebe uma palavra, uma reflexão curta e uma oração para acalmar o coração, renovar as forças e cultivar a gratidão em meio à correria.',
       'É um material leve, bonito e fácil de seguir — perfeito para começar ou retomar a sua rotina de fé, no seu tempo e no seu ritmo.',
     ],
-    price: 'R$ 19,90',
+    price: 'R$ 9,90',
     accent: 'sage',
     cover: '/capas/momentos-com-deus.png',
     benefits: [
@@ -53,7 +53,7 @@ export const products = [
       'Uma forma simples e gostosa de aproximar a família de Deus. São 15 encontros pensados para pais e filhos lerem juntos, conversarem sobre o que aprenderam e orarem em união — fortalecendo os laços de casa e a fé de cada um.',
       'Com linguagem acolhedora e atividades para fazer em conjunto, vira aquele momento especial do dia que as crianças vão esperar com carinho.',
     ],
-    price: 'R$ 19,90',
+    price: 'R$ 9,90',
     accent: 'sky',
     cover: '/capas/familia.png',
     benefits: [
@@ -75,7 +75,7 @@ export const products = [
       'Um livrinho cheio de fofura para os pequenos descobrirem o amor de Deus brincando. Com desenhos para colorir, figurinhas e frases simples, a criança aprende sobre a fé de um jeito leve, divertido e cheio de cor.',
       'Ideal para os primeiros passos na vida com Deus — perfeito para imprimir em casa e guardar de recordação.',
     ],
-    price: 'R$ 19,90',
+    price: 'R$ 9,90',
     accent: 'blush',
     cover: '/capas/fofinho.png',
     benefits: [
@@ -100,7 +100,7 @@ export const combo = {
     'O jeito mais completo (e mais econômico) de levar fé para a casa toda. O Kit Família Completo reúne os três devocionais — um para o seu tempo pessoal, um para a família e um para as crianças — por um valor único e especial.',
     'Tudo o que você precisa para criar uma rotina diária de oração e gratidão, do adulto ao pequeno, com acesso imediato a todos os PDFs.',
   ],
-  price: 'R$ 25,90',
+  price: 'R$ 19,90',
   oldPrice: 'R$ 59,70',
   accent: 'gold',
   badge: 'Mais vantajoso',
